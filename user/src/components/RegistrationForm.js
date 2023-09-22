@@ -9,6 +9,8 @@ function RegistrationForm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState('');
+    const [role, setRole] = useState("");
+    // const [secretCode, setSecretCode] = useState(''); 
 
     const navigate = useNavigate();
     const isUsernameValid = (username) => {
@@ -41,11 +43,15 @@ function RegistrationForm() {
         setErrorMessage('Please enter a valid email.');
         return;
       }
+      if(!(role === 'Admin' || role === 'User' || role === 'Editor')){
+        setErrorMessage('Role is undefined.');
+        return;
+      }
 
     let result = await fetch(
     'http://localhost:5000/register', {
         method: "post",
-        body: JSON.stringify({ firstName,lastName,email,username,password}),
+        body: JSON.stringify({ firstName,lastName,email,role,username,password}),
         headers: {
             'Content-Type': 'application/json'
         }
@@ -59,6 +65,7 @@ function RegistrationForm() {
         setEmail("");
         setUsername("");
         setPassword("");
+        setRole("");
 
         navigate('/LogIn');
     }
@@ -108,6 +115,26 @@ function RegistrationForm() {
         <div className="form-group">
           <input
             type="text"
+            name="role"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            placeholder="Role"
+          />
+        </div>
+        {/* {role === 'admin' && (
+  <div className="form-group">
+    <input
+      type="password"
+      name="secretCode"
+      value={secretCode}
+      onChange={(e) => setSecretCode(e.target.value)}
+      placeholder="Secret Code"
+    />
+  </div>
+        )} */}
+        <div className="form-group">
+          <input
+            type="password"
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

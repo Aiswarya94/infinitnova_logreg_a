@@ -1,64 +1,53 @@
+/* Add this CSS to your stylesheets */
 
+/* Center the login container vertically and horizontally */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f2f2f2; 
-  }
-  
-  
-  .login-box {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    max-width: 400px; 
-    width: 100%;
-    text-align: center; 
-  }
-  
-  .login-box h2 {
-    text-align: center;
-    color: #333; 
-  }
-  
-  .login-box label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold; 
-  }
-  
-  .login-box input[type="text"],
-  .login-box input[type="password"] {
-    padding: 10px;
-    margin-top: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 80%;
-  }
-  
-  .login-box button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    width: 20%; 
-    
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Background color for the page */
+}
 
-  .login-box button:hover {
-    background-color: #0056b3;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 10px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
+/* Style the login box */
+.login-form {
+  max-width: 400px; /* Adjust the width as needed */
+  padding: 20px;
+  background-color: #fff; /* Background color for the login box */
+  border: 1px solid #ccc; /* Border around the login box */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
+}
+
+/* Style the heading */
+.login-form h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Style form input fields */
+.form-group {
+  margin-bottom: 10px;
+}
+
+/* Style error messages in red */
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+/* Style the login button */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Hover state background color */
+}

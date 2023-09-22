@@ -33,10 +33,15 @@ async function connectToDatabase() {
         required: true,
         unique: true,
         },
+        role: {
+          type: String,
+          required: true,
+        },
       password: {
         type: String,
         required: true,
       },
+     
     });
 
     // Create the User model using the defined schema
@@ -82,10 +87,12 @@ async function connectToDatabase() {
               return res.status(401).json({ message: 'Invalid Password' });
           }
 
+          const userRole = user.role;
+
           // res.status(200).json({ message: 'Login successful' });
          
            const token = jwt.sign({ user }, 'your-secret-key', { expiresIn: '1h' });
-           res.status(200).json({messege: 'Login successful', token });
+           res.status(200).json({messege: 'Login successful', role: userRole ,token });
 
       } catch (error) {
           console.error(error);
