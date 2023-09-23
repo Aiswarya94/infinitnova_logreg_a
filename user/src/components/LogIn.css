@@ -1,53 +1,53 @@
-/* Add this CSS to your stylesheets */
-
-/* Center the login container vertically and horizontally */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f0f0; /* Background color for the page */
+  background-color: #f0f0f0; 
 }
 
-/* Style the login box */
+
 .login-form {
-  max-width: 400px; /* Adjust the width as needed */
+  max-width: 400px; 
   padding: 20px;
-  background-color: #fff; /* Background color for the login box */
-  border: 1px solid #ccc; /* Border around the login box */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
+  background-color: #fff;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-/* Style the heading */
+
 .login-form h2 {
   margin-top: 0;
   text-align: center;
 }
 
-/* Style form input fields */
+
 .form-group {
   margin-bottom: 10px;
 }
 
-/* Style error messages in red */
+
 .error-message {
   color: red;
   text-align: center;
 }
 
-/* Style the login button */
+
 button[type="submit"] {
-  display: block;
-  width: 100%;
+  /* display: block; */
+  width: 90%;
   padding: 10px 0;
-  background-color: #007bff; /* Button background color */
-  color: #fff; /* Button text color */
+  background-color: #007bff; 
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin: 0;
+  /* text-align: center;
+  align-items: center; */
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3; /* Hover state background color */
+  background-color: #0056b3; 
 }

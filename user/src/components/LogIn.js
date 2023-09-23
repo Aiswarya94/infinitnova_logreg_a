@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LogIn.css";
+import { Link } from 'react-router-dom';
 // import { useUserContext } from './UserContext';
 
 // const SECRET_CODE = 'admin_code';
@@ -125,6 +126,7 @@ function LogIn() {
         <button type="submit" onClick={handleLogin}>
           Login
         </button>
+        <Link to="/">Create an Account?</Link>
       </form>
     </div>
   );

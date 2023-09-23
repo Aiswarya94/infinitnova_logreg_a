@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RegistrationForm.css';
+import { Link } from 'react-router-dom';
 
 function RegistrationForm() {
     const [firstName, setFirstName] = useState("");
@@ -100,7 +101,7 @@ function RegistrationForm() {
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email Id"
+            placeholder="Email (*Valid email format)"
           />
         </div>
         <div className="form-group">
@@ -109,7 +110,7 @@ function RegistrationForm() {
             name="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="User Name"
+            placeholder="User Name (*Minimum 8 characters)"
           />
         </div>
         <div className="form-group">
@@ -118,7 +119,7 @@ function RegistrationForm() {
             name="role"
             value={role}
             onChange={(e) => setRole(e.target.value)}
-            placeholder="Role"
+            placeholder="Role(*case sensitive)"
           />
         </div>
         {/* {role === 'admin' && (
@@ -138,12 +139,16 @@ function RegistrationForm() {
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
+            placeholder="Password (*Example#1)"
           />
         </div>
         {errorMessage && <div className="error-message">{errorMessage}</div>}
         <button type="submit" onClick={handleOnSubmit}>Submit</button>
+        <div className="form-group">
+        <Link to="/login">Login</Link>
+        </div>
       </form>
+      
     </div>
   );
 };
