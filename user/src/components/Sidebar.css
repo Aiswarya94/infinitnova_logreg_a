@@ -1,0 +1,109 @@
+/* Styling for the AdminDashboard component */
+
+/* Overall layout */
+/* .admin-page {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f0f0;
+  } */
+  
+  /* Sidebar */
+  .sidebar {
+    /* display: flex; */
+    height: 200vh;
+    background-color: #f0f0f0;
+    width: 200px;
+    background-color: #333; /* Sidebar background color */
+    color: white; /* Text color for sidebar items */
+    padding: 20px;
+    
+    /* flex-direction: column; */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .accordion-header {
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-list li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .link-no-decoration {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Set text color to white */
+  }
+  
+  .menu-list li:hover {
+    background-color: #555; /* Background color on hover */
+  }
+  
+  /* CSS for Dropdown Menu */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-header {
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Hide the dropdown by default */
+    background-color: #333; /* Dropdown background color */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 150px; /* Adjust the width as needed */
+    z-index: 1; /* Ensure the dropdown is on top of other content */
+  }
+  
+  /* Style for dropdown list items */
+  .submenu li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Show the dropdown when its parent is hovered */
+  .dropdown:hover .submenu {
+    display: block;
+  }
+  
+  /* CSS for Dropdown Arrow */
+  .dropdown-header {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Center arrow vertically */
+  }
+  
+  .dropdown-header::after {
+    content: "▼"; /* Unicode arrow character */
+    margin-left: 5px; /* Add spacing between text and arrow */
+  }
+  
+  /* Content */
+  .content {
+    flex: 1; /* Take up the remaining width */
+    padding: 20px; /* Add padding for spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+  }
+  
+  /* Rest of the styles for content, buttons, tables, and dialog */
+  
+  
+

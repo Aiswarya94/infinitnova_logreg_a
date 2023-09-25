@@ -6,6 +6,9 @@ import LogIn from './components/LogIn';
 import Profile from './components/Profile';
 import AdminDashboard from './components/AdminDashboard';
 import EditorDashboard from './components/EditorDashboard';
+import Chart from './components/Chart';
+import Dashboard from './components/Dashboard';
+import Pages from './components/Pages';
 
 
 
@@ -18,6 +21,9 @@ function App() {
         <Route path="/profile" element={<Profile/>} />
         <Route path="/admindashboard" element={<AdminDashboard/>} />
         <Route path="/editordashboard" element={<EditorDashboard/>} />
+        <Route path="/chart" element={<Chart/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/pages" element={<Pages/>} />
           </Routes>
     </BrowserRouter>
 

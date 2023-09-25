@@ -44,6 +44,38 @@ async function connectToDatabase() {
      
     });
 
+    
+// Define the Mongoose schema for data
+// const DataSchema = new mongoose.Schema({
+//   city: String,
+//   year: Number,
+//   population: Number,
+// });
+
+// Create the Mongoose model for data
+// const DataModel = mongoose.model('Data', DataSchema);
+
+const populationSchema = new mongoose.Schema({
+  city_name: {
+    type: String,
+    required: true,
+  },
+  population: {
+    type: Number,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
+  },
+  year: {
+    type: Number,
+    required: true,
+  },
+});
+
+const Population = mongoose.model('Population', populationSchema);
+
     // Create the User model using the defined schema
     const User = mongoose.model('User', UserSchema);
 
@@ -99,7 +131,107 @@ async function connectToDatabase() {
           res.status(500).send('Something Went Wrong');
       }
   });
+  app.post('/add-population', async (req, resp) => {
+    try {
+        const populationData = new Population(req.body);
+        const result = await populationData.save();
+        resp.status(201).json(result);
+    } catch (e) {
+        console.error(e);
+        resp.status(500).send('Something Went Wrong');
+    }
+});
 
+// Read Operation - Retrieve population data
+app.get('/get-population', async (req, resp) => {
+    try {
+        const populationData = await Population.find();
+        resp.status(200).json(populationData);
+    } catch (e) {
+        console.error(e);
+        resp.status(500).send('Something Went Wrong');
+    }
+});
+
+
+// Update Operation - Update population data by ID
+app.put('/update-population/:id', async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const updatedPopulationData = await Population.findByIdAndUpdate(
+            id,
+            req.body,
+            { new: true }
+        );
+
+        if (!updatedPopulationData) {
+            return resp.status(404).json({ message: 'Population data not found' });
+        }
+
+        resp.status(200).json(updatedPopulationData);
+    } catch (e) {
+        console.error(e);
+        resp.status(500).send('Something Went Wrong');
+    }
+});
+
+// Delete Operation - Delete population data by ID
+app.delete('/delete-population/:id', async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const deletedPopulationData = await Population.findByIdAndRemove(id);
+
+        if (!deletedPopulationData) {
+            return resp.status(404).json({ message: 'Population data not found' });
+        }
+
+        resp.status(200).json({ message: 'Population data deleted successfully' });
+    } catch (e) {
+        console.error(e);
+        resp.status(500).send('Something Went Wrong');
+    }
+});
+
+  // const DataModel = mongoose.model('Data', {
+  //   city: String,
+  //   year: Number,
+  //   population: Number,
+  // });
+  
+  // API route to get data from MongoDB
+  // app.get('/get-data-from-mongodb', async (req, res) => {
+  //   try {
+  //     const data = await DataModel.find();
+  //     res.json(data);
+  //   } catch (error) {
+  //     console.error('Error fetching data from MongoDB:', error);
+  //     res.status(500).send('Internal Server Error');
+  //   }
+  // });
+
+  // app.post('/add-data-to-mongodb', async (req, res) => {
+  //   try {
+      
+      // const { city, year, population } = req.body;
+  
+     
+  //     const newData = new DataModel({
+  //       city,
+  //       year,
+  //       population,
+  //     });
+  
+     
+  //     await newData.save();
+  
+  //     res.status(201).json({ message: 'Data added to MongoDB successfully' });
+  //   } catch (error) {
+  //     console.error('Error adding data to MongoDB:', error);
+  //     res.status(500).json({ error: 'Internal Server Error' });
+  //   }
+  // });
+  
+  
     app.listen(5000, () => {
       console.log('App is listening on port 5000');
     });

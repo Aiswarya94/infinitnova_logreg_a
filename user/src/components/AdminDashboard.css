@@ -1,0 +1,202 @@
+/* Styling for the AdminDashboard component */
+
+/* Overall layout */
+.admin-page {
+  display: flex;
+ 
+  height: 100vh;
+  background-color: #f0f0f0; /* Background color for the entire page */
+}
+.admin{
+  display:flex;
+  flex-direction:column;
+  margin:0 20px 0 20px;
+  width:100%;
+}
+/* .heading-container {
+  text-align: center; 
+  margin-bottom: 20px;
+} */
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #333; /* Sidebar background color */
+  color: white; /* Text color for sidebar items */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Center content horizontally */
+}
+
+.accordion-header {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.link-no-decoration {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Set text color to white */
+}
+
+.menu-list li:hover {
+  background-color: #555; /* Background color on hover */
+}
+/* CSS for Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-header {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* Hide the dropdown by default */
+  background-color: #333; /* Dropdown background color */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 150px; /* Adjust the width as needed */
+  z-index: 1; /* Ensure the dropdown is on top of other content */
+}
+
+/* Style for dropdown list items */
+.submenu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Show the dropdown when its parent is hovered */
+.dropdown:hover .submenu {
+  display: block;
+}
+/* CSS for Dropdown Arrow */
+.dropdown-header {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center; /* Center arrow vertically */
+}
+
+.dropdown-header::after {
+  content: "▼"; /* Unicode arrow character */
+  margin-left: 5px; /* Add spacing between text and arrow */
+}
+/* Content */
+.content {
+  flex: 1; /* Take up the remaining width */
+  padding: 20px; /* Add padding for spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+h1 {
+  text-align: center; /* Center the heading */
+  margin: 20px 0; /* Add margin for spacing */
+}
+
+.add-button {
+  background-color: #0088FE;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px auto; /* Center the button horizontally */
+  cursor: pointer;
+}
+
+/* Data Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto; /* Center the data table horizontally */
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+}
+
+/* Dialog Overlay */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.dialog-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dialog-content {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dialog-actions {
+  text-align: right;
+}
+.edit-button,
+.delete-button{
+  margin-left: 10px;
+  width: 80px;
+}
+.cancel-button,
+.save-button {
+  background-color: #0088FE;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  
+}
+
+.cancel-button:hover,
+.save-button:hover {
+  background-color: #0056b3;
+}
